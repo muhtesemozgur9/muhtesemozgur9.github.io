@@ -32,6 +32,15 @@
       <button class="btn btn-info" onclick="switchMenu('akbank')"><i class="fa-solid fa-building-columns"></i> Akbank</button>
       <button class="btn btn-info" onclick="switchMenu('enpara')"><i class="fa-solid fa-building-columns"></i> Enpara</button>
       <button class="btn btn-info" onclick="switchMenu('isbankasi')"><i class="fa-solid fa-building-columns"></i> İş Bankası</button>
+      <button class="btn btn-info" onclick="switchMenu('qnb')"><i class="fa-solid fa-building-columns"></i> QNB Finansbank</button>
+      <button class="btn btn-info" onclick="switchMenu('vakifbank')"><i class="fa-solid fa-building-columns"></i> Vakıfbank</button>
+      <button class="btn btn-info" onclick="switchMenu('yapikredi')"><i class="fa-solid fa-building-columns"></i> Yapıkredi</button>
+      <button class="btn btn-info" onclick="switchMenu('fibabanka')"><i class="fa-solid fa-building-columns"></i> Fibabanka</button>
+      <button class="btn btn-info" onclick="switchMenu('kuveytturk')"><i class="fa-solid fa-building-columns"></i> Kuveyt Türk</button>
+      <button class="btn btn-info" onclick="switchMenu('garanti')"><i class="fa-solid fa-building-columns"></i> Garanti</button>
+      <button class="btn btn-info" onclick="switchMenu('on')"><i class="fa-solid fa-building-columns"></i> On</button>
+      <button class="btn btn-info" onclick="switchMenu('tomhadi')"><i class="fa-solid fa-building-columns"></i> Tom Hadi</button>
+      <button class="btn btn-info" onclick="switchMenu('hayatfinans')"><i class="fa-solid fa-building-columns"></i> Hayat Finans</button>
     </div>
     <ul id="navMenu"></ul>
   </header>
@@ -57,7 +66,7 @@
       </div>
 
       <!-- Owl Carousel Alanı (Grafik altında) -->
-      <h2>Rastgele 10 Yorum (Akbank)</h2>
+      <h2>Rastgele 10 Yorum</h2>
       <button class="shuffle-button">Karıştır Gitsin!</button>
       <div class="owl-carousel" id="akbankCarousel"></div>
     </div>
@@ -100,6 +109,10 @@
     </div>
 
 
+
+
+
+
     <!-- Hakkında -->
     <div id="hakkinda-enpara" class="section hakkinda-section">
       <h1>Hakkında - Enpara</h1>
@@ -117,7 +130,7 @@
       </div>
 
       <!-- Owl Carousel Alanı (Grafik altında) -->
-      <h2>Rastgele 10 Yorum (Enpara)</h2>
+      <h2>Rastgele 10 Yorum</h2>
       <button class="shuffle-button">Karıştır Gitsin!</button>
       <div class="owl-carousel" id="enparaCarousel"></div>
     </div>
@@ -159,6 +172,9 @@
       <ul id="noteList"></ul>
     </div>
 
+
+
+
     
     <!-- Hakkında -->
     <div id="hakkinda-isbankasi" class="section hakkinda-section">
@@ -177,7 +193,7 @@
       </div>
 
       <!-- Owl Carousel Alanı (Grafik altında) -->
-      <h2>Rastgele 10 Yorum (Enpara)</h2>
+      <h2>Rastgele 10 Yorum</h2>
       <button class="shuffle-button">Karıştır Gitsin!</button>
       <div class="owl-carousel" id="isbankasiCarousel"></div>
     </div>
@@ -218,6 +234,10 @@
       </div>
       <ul id="noteList"></ul>
     </div>
+
+
+
+
 
         
     <!-- Hakkında -->
@@ -226,51 +246,51 @@
       <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
       <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
       <ul>
-        <li>İş Bankası Google Play Store Puanı: 4,4</li>
-        <li>İş Bankası Google Play Store İndirme sayısı: 10Mn+</li>
-        <li>İş Bankası App Store Puanı: 4,8</li>
+        <li>QNB Finansbank Google Play Store Puanı: 4,4</li>
+        <li>QNB Finansbank Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>QNB Finansbank App Store Puanı: 4,8</li>
       </ul>
 
       <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
       <div class="timeline-chart-container">
-        <canvas id="timelineChart-isbankasi"></canvas>
+        <canvas id="timelineChart-qnb"></canvas>
       </div>
 
       <!-- Owl Carousel Alanı (Grafik altında) -->
-      <h2>Rastgele 10 Yorum (Enpara)</h2>
+      <h2>Rastgele 10 Yorum</h2>
       <button class="shuffle-button">Karıştır Gitsin!</button>
-      <div class="owl-carousel" id="isbankasiCarousel"></div>
+      <div class="owl-carousel" id="qnbCarousel"></div>
     </div>
 
     <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
-    <div id="grafikler-isbankasi" class="section">
+    <div id="grafikler-qnb" class="section">
       <h1>Grafikler ve Kelime Bulutları</h1>
       <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
 
       <div class="two-column">
         <div class="chart-left">
-          <div class="chart-title">İş Bankası - Star Rating Category Distribution (Google Play)</div>
+          <div class="chart-title">QNB Finansbank - Star Rating Category Distribution (Google Play)</div>
           <div class="chart-container">
-            <canvas id="myChartRatingDistribution-isbankasi"></canvas>
+            <canvas id="myChartRatingDistribution-qnb"></canvas>
           </div>
         </div>
         <div class="clouds-right">
-          <img src="isbankasi_iyi_wordcloud.png?v=1.0" alt="İş Bankası - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
-          <img src="isbankasi_kötü_wordcloud.png?v=1.0" alt="İş Bankası - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
-          <img src="isbankasi_orta_wordcloud.png?v=1.0" alt="İş Bankası - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="qnb_iyi_wordcloud.png?v=1.0" alt="QNB Finansbank - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="qnb_kötü_wordcloud.png?v=1.0" alt="QNB Finansbank - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="qnb_orta_wordcloud.png?v=1.0" alt="QNB Finansbank - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
         </div>
       </div>
 
       <div class="big-wordcloud">
-        <h2>İş Bankası - Şikayetvar Kelime Bulutu</h2>
-        <img src="isbankasi_title_wordcloud.png?v=1.0" alt="İş Bankası - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
+        <h2>QNB Finansbank - Şikayetvar Kelime Bulutu</h2>
+        <img src="qnb_title_wordcloud.png?v=1.0" alt="QNB Finansbank - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- Notlar -->
-    <div id="notlar-isbankasi" class="section">
+    <div id="notlar-qnb" class="section">
       <h1>Notlar</h1>
-      <p>Bu bölümde İş Bankası ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
+      <p>Bu bölümde QNB Finansbank ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
       <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
       <div id="noteActions">
         <button id="addNoteBtn" onclick="addNote()">Not Ekle</button>
@@ -278,6 +298,517 @@
       </div>
       <ul id="noteList"></ul>
     </div>
+
+
+        
+    <!-- Hakkında -->
+    <div id="hakkinda-vakifbank" class="section hakkinda-section">
+      <h1>Hakkında - Vakıfbank</h1>
+      <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
+      <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
+      <ul>
+        <li>Vakıfbank Google Play Store Puanı: 4,4</li>
+        <li>Vakıfbank Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>Vakıfbank App Store Puanı: 4,8</li>
+      </ul>
+
+      <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
+      <div class="timeline-chart-container">
+        <canvas id="timelineChart-vakifbank"></canvas>
+      </div>
+
+      <!-- Owl Carousel Alanı (Grafik altında) -->
+      <h2>Rastgele 10 Yorum</h2>
+      <button class="shuffle-button">Karıştır Gitsin!</button>
+      <div class="owl-carousel" id="vakifbankCarousel"></div>
+    </div>
+
+    <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
+    <div id="grafikler-vakifbank" class="section">
+      <h1>Grafikler ve Kelime Bulutları</h1>
+      <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
+
+      <div class="two-column">
+        <div class="chart-left">
+          <div class="chart-title">Vakıfbank - Star Rating Category Distribution (Google Play)</div>
+          <div class="chart-container">
+            <canvas id="myChartRatingDistribution-vakifbank"></canvas>
+          </div>
+        </div>
+        <div class="clouds-right">
+          <img src="vakifbank_iyi_wordcloud.png?v=1.0" alt="Vakıfbank - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="vakifbank_kötü_wordcloud.png?v=1.0" alt="Vakıfbank - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="vakifbank_orta_wordcloud.png?v=1.0" alt="Vakıfbank - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
+        </div>
+      </div>
+
+      <div class="big-wordcloud">
+        <h2>Vakıfbank - Şikayetvar Kelime Bulutu</h2>
+        <img src="vakifbank_title_wordcloud.png?v=1.0" alt="Vakıfbank - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- Notlar -->
+    <div id="notlar-vakifbank" class="section">
+      <h1>Notlar</h1>
+      <p>Bu bölümde Vakıfbank ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
+      <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
+      <div id="noteActions">
+        <button id="addNoteBtn" onclick="addNote()">Not Ekle</button>
+        <button id="updateNoteBtn" onclick="updateNote()">Güncelle</button>
+      </div>
+      <ul id="noteList"></ul>
+    </div>
+
+
+
+        
+    <!-- Hakkında -->
+    <div id="hakkinda-yapikredi" class="section hakkinda-section">
+      <h1>Hakkında - Yapıkredi</h1>
+      <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
+      <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
+      <ul>
+        <li>Yapıkredi Google Play Store Puanı: 4,4</li>
+        <li>Yapıkredi Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>Yapıkredi App Store Puanı: 4,8</li>
+      </ul>
+
+      <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
+      <div class="timeline-chart-container">
+        <canvas id="timelineChart-yapikredi"></canvas>
+      </div>
+
+      <!-- Owl Carousel Alanı (Grafik altında) -->
+      <h2>Rastgele 10 Yorum</h2>
+      <button class="shuffle-button">Karıştır Gitsin!</button>
+      <div class="owl-carousel" id="yapikrediCarousel"></div>
+    </div>
+
+    <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
+    <div id="grafikler-yapikredi" class="section">
+      <h1>Grafikler ve Kelime Bulutları</h1>
+      <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
+
+      <div class="two-column">
+        <div class="chart-left">
+          <div class="chart-title">Yapıkredi - Star Rating Category Distribution (Google Play)</div>
+          <div class="chart-container">
+            <canvas id="myChartRatingDistribution-yapikredi"></canvas>
+          </div>
+        </div>
+        <div class="clouds-right">
+          <img src="yapikredi_iyi_wordcloud.png?v=1.0" alt="Yapıkredi - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="yapikredi_kötü_wordcloud.png?v=1.0" alt="Yapıkredi - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="yapikredi_orta_wordcloud.png?v=1.0" alt="Yapıkredi - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
+        </div>
+      </div>
+
+      <div class="big-wordcloud">
+        <h2>Yapıkredi - Şikayetvar Kelime Bulutu</h2>
+        <img src="yapikredi_title_wordcloud.png?v=1.0" alt="Yapıkredi - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- Notlar -->
+    <div id="notlar-yapikredi" class="section">
+      <h1>Notlar</h1>
+      <p>Bu bölümde Yapıkredi ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
+      <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
+      <div id="noteActions">
+        <button id="addNoteBtn" onclick="addNote()">Not Ekle</button>
+        <button id="updateNoteBtn" onclick="updateNote()">Güncelle</button>
+      </div>
+      <ul id="noteList"></ul>
+    </div>
+
+
+
+
+        
+    <!-- Hakkında -->
+    <div id="hakkinda-fibabanka" class="section hakkinda-section">
+      <h1>Hakkında - Fibabanka</h1>
+      <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
+      <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
+      <ul>
+        <li>Fibabanka Google Play Store Puanı: 4,4</li>
+        <li>Fibabanka Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>Fibabanka App Store Puanı: 4,8</li>
+      </ul>
+
+      <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
+      <div class="timeline-chart-container">
+        <canvas id="timelineChart-fibabanka"></canvas>
+      </div>
+
+      <!-- Owl Carousel Alanı (Grafik altında) -->
+      <h2>Rastgele 10 Yorum</h2>
+      <button class="shuffle-button">Karıştır Gitsin!</button>
+      <div class="owl-carousel" id="fibabankaCarousel"></div>
+    </div>
+
+    <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
+    <div id="grafikler-fibabanka" class="section">
+      <h1>Grafikler ve Kelime Bulutları</h1>
+      <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
+
+      <div class="two-column">
+        <div class="chart-left">
+          <div class="chart-title">Fibabanka - Star Rating Category Distribution (Google Play)</div>
+          <div class="chart-container">
+            <canvas id="myChartRatingDistribution-fibabanka"></canvas>
+          </div>
+        </div>
+        <div class="clouds-right">
+          <img src="fibabanka_iyi_wordcloud.png?v=1.0" alt="Fibabanka - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="fibabanka_kötü_wordcloud.png?v=1.0" alt="Fibabanka - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="fibabanka_orta_wordcloud.png?v=1.0" alt="Fibabanka - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
+        </div>
+      </div>
+
+      <div class="big-wordcloud">
+        <h2>Fibabanka - Şikayetvar Kelime Bulutu</h2>
+        <img src="fibabanka_title_wordcloud.png?v=1.0" alt="Fibabanka - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- Notlar -->
+    <div id="notlar-fibabanka" class="section">
+      <h1>Notlar</h1>
+      <p>Bu bölümde Fibabanka ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
+      <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
+      <div id="noteActions">
+        <button id="addNoteBtn" onclick="addNote()">Not Ekle</button>
+        <button id="updateNoteBtn" onclick="updateNote()">Güncelle</button>
+      </div>
+      <ul id="noteList"></ul>
+    </div>
+
+
+
+
+
+    
+
+        
+    <!-- Hakkında -->
+    <div id="hakkinda-kuveytturk" class="section hakkinda-section">
+      <h1>Hakkında - Kuveyt Türk</h1>
+      <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
+      <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
+      <ul>
+        <li>Kuveyt Türk Google Play Store Puanı: 4,4</li>
+        <li>Kuveyt Türk Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>Kuveyt Türk App Store Puanı: 4,8</li>
+      </ul>
+
+      <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
+      <div class="timeline-chart-container">
+        <canvas id="timelineChart-kuveytturk"></canvas>
+      </div>
+
+      <!-- Owl Carousel Alanı (Grafik altında) -->
+      <h2>Rastgele 10 Yorum</h2>
+      <button class="shuffle-button">Karıştır Gitsin!</button>
+      <div class="owl-carousel" id="kuveytturkCarousel"></div>
+    </div>
+
+    <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
+    <div id="grafikler-kuveytturk" class="section">
+      <h1>Grafikler ve Kelime Bulutları</h1>
+      <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
+
+      <div class="two-column">
+        <div class="chart-left">
+          <div class="chart-title">Kuveyt Türk - Star Rating Category Distribution (Google Play)</div>
+          <div class="chart-container">
+            <canvas id="myChartRatingDistribution-kuveytturk"></canvas>
+          </div>
+        </div>
+        <div class="clouds-right">
+          <img src="kuveytturk_iyi_wordcloud.png?v=1.0" alt="Kuveyt Türk - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="kuveytturk_kötü_wordcloud.png?v=1.0" alt="Kuveyt Türk - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="kuveytturk_orta_wordcloud.png?v=1.0" alt="Kuveyt Türk - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
+        </div>
+      </div>
+
+      <div class="big-wordcloud">
+        <h2>Kuveyt Türk - Şikayetvar Kelime Bulutu</h2>
+        <img src="kuveytturk_title_wordcloud.png?v=1.0" alt="Kuveyt Türk - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- Notlar -->
+    <div id="notlar-kuveytturk" class="section">
+      <h1>Notlar</h1>
+      <p>Bu bölümde Kuveyt Türk ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
+      <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
+      <div id="noteActions">
+        <button id="addNoteBtn" onclick="addNote()">Not Ekle</button>
+        <button id="updateNoteBtn" onclick="updateNote()">Güncelle</button>
+      </div>
+      <ul id="noteList"></ul>
+    </div>
+
+
+
+
+
+            
+    <!-- Hakkında -->
+    <div id="hakkinda-garanti" class="section hakkinda-section">
+      <h1>Hakkında - Garanti</h1>
+      <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
+      <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
+      <ul>
+        <li>Garanti Google Play Store Puanı: 4,4</li>
+        <li>Garanti Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>Garanti App Store Puanı: 4,8</li>
+      </ul>
+
+      <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
+      <div class="timeline-chart-container">
+        <canvas id="timelineChart-garanti"></canvas>
+      </div>
+
+      <!-- Owl Carousel Alanı (Grafik altında) -->
+      <h2>Rastgele 10 Yorum</h2>
+      <button class="shuffle-button">Karıştır Gitsin!</button>
+      <div class="owl-carousel" id="garantiCarousel"></div>
+    </div>
+
+    <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
+    <div id="grafikler-garanti" class="section">
+      <h1>Grafikler ve Kelime Bulutları</h1>
+      <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
+
+      <div class="two-column">
+        <div class="chart-left">
+          <div class="chart-title">Garanti - Star Rating Category Distribution (Google Play)</div>
+          <div class="chart-container">
+            <canvas id="myChartRatingDistribution-garanti"></canvas>
+          </div>
+        </div>
+        <div class="clouds-right">
+          <img src="garanti_iyi_wordcloud.png?v=1.0" alt="Garanti - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="garanti_kötü_wordcloud.png?v=1.0" alt="Garanti - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="garanti_orta_wordcloud.png?v=1.0" alt="Garanti - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
+        </div>
+      </div>
+
+      <div class="big-wordcloud">
+        <h2>Garanti - Şikayetvar Kelime Bulutu</h2>
+        <img src="garanti_title_wordcloud.png?v=1.0" alt="Garanti - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- Notlar -->
+    <div id="notlar-garanti" class="section">
+      <h1>Notlar</h1>
+      <p>Bu bölümde Garanti ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
+      <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
+      <div id="noteActions">
+        <button id="addNoteBtn" onclick="addNote()">Not Ekle</button>
+        <button id="updateNoteBtn" onclick="updateNote()">Güncelle</button>
+      </div>
+      <ul id="noteList"></ul>
+    </div>
+
+
+
+
+    
+            
+    <!-- Hakkında -->
+    <div id="hakkinda-on" class="section hakkinda-section">
+      <h1>Hakkında - On</h1>
+      <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
+      <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
+      <ul>
+        <li>On Google Play Store Puanı: 4,4</li>
+        <li>On Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>On App Store Puanı: 4,8</li>
+      </ul>
+
+      <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
+      <div class="timeline-chart-container">
+        <canvas id="timelineChart-on"></canvas>
+      </div>
+
+      <!-- Owl Carousel Alanı (Grafik altında) -->
+      <h2>Rastgele 10 Yorum</h2>
+      <button class="shuffle-button">Karıştır Gitsin!</button>
+      <div class="owl-carousel" id="onCarousel"></div>
+    </div>
+
+    <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
+    <div id="grafikler-on" class="section">
+      <h1>Grafikler ve Kelime Bulutları</h1>
+      <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
+
+      <div class="two-column">
+        <div class="chart-left">
+          <div class="chart-title">On - Star Rating Category Distribution (Google Play)</div>
+          <div class="chart-container">
+            <canvas id="myChartRatingDistribution-on"></canvas>
+          </div>
+        </div>
+        <div class="clouds-right">
+          <img src="on_iyi_wordcloud.png?v=1.0" alt="On - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="on_kötü_wordcloud.png?v=1.0" alt="On - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="on_orta_wordcloud.png?v=1.0" alt="On - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
+        </div>
+      </div>
+
+      <div class="big-wordcloud">
+        <h2>On - Şikayetvar Kelime Bulutu</h2>
+        <img src="on_title_wordcloud.png?v=1.0" alt="On - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- Notlar -->
+    <div id="notlar-on" class="section">
+      <h1>Notlar</h1>
+      <p>Bu bölümde On ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
+      <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
+      <div id="noteActions">
+        <button id="addNoteBtn" onclick="addNote()">Not Ekle</button>
+        <button id="updateNoteBtn" onclick="updateNote()">Güncelle</button>
+      </div>
+      <ul id="noteList"></ul>
+    </div>
+
+
+
+
+
+    
+            
+    <!-- Hakkında -->
+    <div id="hakkinda-tomhadi" class="section hakkinda-section">
+      <h1>Hakkında - Tom Hadi</h1>
+      <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
+      <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
+      <ul>
+        <li>Tom Hadi Google Play Store Puanı: 4,4</li>
+        <li>Tom Hadi Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>Tom Hadi App Store Puanı: 4,8</li>
+      </ul>
+
+      <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
+      <div class="timeline-chart-container">
+        <canvas id="timelineChart-tomhadi"></canvas>
+      </div>
+
+      <!-- Owl Carousel Alanı (Grafik altında) -->
+      <h2>Rastgele 10 Yorum</h2>
+      <button class="shuffle-button">Karıştır Gitsin!</button>
+      <div class="owl-carousel" id="tomhadiCarousel"></div>
+    </div>
+
+    <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
+    <div id="grafikler-tomhadi" class="section">
+      <h1>Grafikler ve Kelime Bulutları</h1>
+      <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
+
+      <div class="two-column">
+        <div class="chart-left">
+          <div class="chart-title">Tom Hadi - Star Rating Category Distribution (Google Play)</div>
+          <div class="chart-container">
+            <canvas id="myChartRatingDistribution-tomhadi"></canvas>
+          </div>
+        </div>
+        <div class="clouds-right">
+          <img src="tomhadi_iyi_wordcloud.png?v=1.0" alt="Tom Hadi - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="tomhadi_kötü_wordcloud.png?v=1.0" alt="Tom Hadi - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="tomhadi_orta_wordcloud.png?v=1.0" alt="Tom Hadi - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
+        </div>
+      </div>
+
+      <div class="big-wordcloud">
+        <h2>Tom Hadi - Şikayetvar Kelime Bulutu</h2>
+        <img src="tomhadi_title_wordcloud.png?v=1.0" alt="Tom Hadi - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- Notlar -->
+    <div id="notlar-tomhadi" class="section">
+      <h1>Notlar</h1>
+      <p>Bu bölümde Tom Hadi ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
+      <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
+      <div id="noteActions">
+        <button id="addNoteBtn" onclick="addNote()">Not Ekle</button>
+        <button id="updateNoteBtn" onclick="updateNote()">Güncelle</button>
+      </div>
+      <ul id="noteList"></ul>
+    </div>
+
+
+
+
+        
+            
+    <!-- Hakkında -->
+    <div id="hakkinda-hayatfinans" class="section hakkinda-section">
+      <h1>Hakkında - Hayat Finans</h1>
+      <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
+      <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
+      <ul>
+        <li>Hayat Finans Google Play Store Puanı: 4,4</li>
+        <li>Hayat Finans Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>Hayat Finans App Store Puanı: 4,8</li>
+      </ul>
+
+      <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
+      <div class="timeline-chart-container">
+        <canvas id="timelineChart-hayatfinans"></canvas>
+      </div>
+
+      <!-- Owl Carousel Alanı (Grafik altında) -->
+      <h2>Rastgele 10 Yorum</h2>
+      <button class="shuffle-button">Karıştır Gitsin!</button>
+      <div class="owl-carousel" id="hayatfinansCarousel"></div>
+    </div>
+
+    <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
+    <div id="grafikler-hayatfinans" class="section">
+      <h1>Grafikler ve Kelime Bulutları</h1>
+      <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
+
+      <div class="two-column">
+        <div class="chart-left">
+          <div class="chart-title">Hayat Finans - Star Rating Category Distribution (Google Play)</div>
+          <div class="chart-container">
+            <canvas id="myChartRatingDistribution-hayatfinans"></canvas>
+          </div>
+        </div>
+        <div class="clouds-right">
+          <img src="hayatfinans_iyi_wordcloud.png?v=1.0" alt="Hayat Finans - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="hayatfinans_kötü_wordcloud.png?v=1.0" alt="Hayat Finans - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="hayatfinans_orta_wordcloud.png?v=1.0" alt="Hayat Finans - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
+        </div>
+      </div>
+
+      <div class="big-wordcloud">
+        <h2>Hayat Finans - Şikayetvar Kelime Bulutu</h2>
+        <img src="hayatfinans_title_wordcloud.png?v=1.0" alt="Hayat Finans - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- Notlar -->
+    <div id="notlar-hayatfinans" class="section">
+      <h1>Notlar</h1>
+      <p>Bu bölümde Hayat Finans ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
+      <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
+      <div id="noteActions">
+        <button id="addNoteBtn" onclick="addNote()">Not Ekle</button>
+        <button id="updateNoteBtn" onclick="updateNote()">Güncelle</button>
+      </div>
+      <ul id="noteList"></ul>
+    </div>
+
+
 
 
   </div>
@@ -296,6 +827,18 @@
   <!-- Inline txt verisi (örneğin akbank.txt içeriği) -->
   <script src="comments/akbankData.js"></script>
   <script src="comments/enparaData.js"></script>
+  <script src="comments/fibabanka.js"></script>
+  <script src="comments/garanti.js"></script>
+  <script src="comments/hayatfinans.js"></script>
+  <script src="comments/isbankasi.js"></script>
+  <script src="comments/kuveytturk.js"></script>
+  <script src="comments/on.js"></script>
+  <script src="comments/qnb.js"></script>
+  <script src="comments/tomhadi.js"></script>
+  <script src="comments/yapikredi.js"></script>
+  <script src="comments/vakifbank.js"></script>
+
+
 
   <script src="scripts/app.js"></script>
 </body>
