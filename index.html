@@ -7,296 +7,63 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <meta name="robots" content="noindex, nofollow">
- <style>
-    /* Genel stil */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-    }
-    header {
-      background-color: #00579a;
-      padding: 10px;
-      color: #fff;
-    }
-    .menu-buttons {
-      margin-bottom: 10px;
-    }
-    .menu-buttons button {
-      margin-right: 10px;
-      padding: 8px 16px;
-      cursor: pointer;
-      background: #fff;
-      color: #00579a;
-      border: none;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-    header ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-    header ul li {
-      margin-right: 20px;
-    }
-    header ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      font-family: "Manrope", sans-serif;
-    }
-    .content {
-      padding: 20px;
-      background: #fff;
-      margin: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .section {
-      display: none;
-    }
-    .section.active {
-      display: block;
-    }
-    /* "Hakkında" bölümü */
-    #hakkinda {
-      background: #e7f3ff;
-      padding: 20px;
-      border-left: 5px solid #00579a;
-      border-radius: 4px;
-    }
-    #hakkinda ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    #hakkinda li {
-      margin-bottom: 8px;
-    }
-    /* İki sütun düzeni */
-    .two-column {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 20px;
-      overflow-x: auto; /* Ekran daralırsa yatay kaydırma */
-      min-height: 600px;
-    }
-    /* Soldaki sütun (Grafik) */
-    .chart-left {
-      flex: 1;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    /* Sağdaki sütun (Kelime Bulutları) */
-    .clouds-right {
-      flex: 0 0 400px;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      gap: 20px;
-    }
-    /* Grafik başlığı */
-    .chart-title {
-      text-align: center;
-      margin-bottom: 10px;
-      font-size: 1.8em;
-      color: #333;
-    }
-    /* Chart.js kapsayıcısı */
-    .chart-container {
-      width: 100%;
-      min-height: 600px;
-      position: relative;
-    }
-    canvas {
-      width: 100% !important;
-      height: 100% !important;
-    }
-    /* Kelime bulutu görselleri */
-    .clouds-right img {
-      max-width: 90%;
-      height: auto;
-      cursor: pointer;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-      border-radius: 4px;
-    }
-    /* Yeni büyük kelime bulutu (tek sütun, ortalanmış) */
-    .big-wordcloud {
-      margin-top: 40px;
-      text-align: center;
-    }
-    .big-wordcloud img {
-      max-width: 80%;
-      cursor: pointer;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-      border-radius: 4px;
-    }
-    /* Modal (Pop-up) Stili */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
-    }
-    .close {
-      position: absolute;
-      top: 30px;
-      right: 40px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .close:hover {
-      color: #ccc;
-    }
-    .zoom-controls {
-      position: absolute;
-      bottom: 50px;
-      right: 50px;
-      display: flex;
-      gap: 10px;
-    }
-    .zoom-btn {
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      font-weight: bold;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      background-color: #fff;
-      color: #333;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-      transition: background-color 0.2s;
-    }
-    .zoom-btn:hover {
-      background-color: #f0f0f0;
-    }
-    /* Notlar Bölümü */
-    #notlar {
-      background: #e7f3ff;
-      padding: 20px;
-      border-left: 5px solid #00579a;
-      border-radius: 4px;
-      margin-top: 40px;
-    }
-    #notlar h1 {
-      margin-top: 0;
-    }
-    #noteInput {
-      width: 100%;
-      height: 80px;
-      font-size: 1em;
-      padding: 5px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      resize: vertical;
-    }
-    #noteActions {
-      margin-top: 10px;
-      text-align: right;
-    }
-    #noteActions button {
-      padding: 6px 12px;
-      margin-left: 10px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    #addNoteBtn {
-      background-color: #00579a;
-      color: #fff;
-    }
-    #updateNoteBtn {
-      background-color: #007b3a;
-      color: #fff;
-      display: none;
-    }
-    #noteList {
-      list-style-type: disc;
-      margin-top: 20px;
-      padding-left: 20px;
-    }
-    #noteList li {
-      margin-bottom: 10px;
-      padding: 10px;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      position: relative;
-    }
-    .note-actions {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-    .note-actions button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #00579a;
-      margin-left: 5px;
-    }
-    #home {
-      font-family: 'Poppins';
-    }
-  </style>
+  <link href="styles/app.css" rel="stylesheet"/>
+  <!-- jQuery ve Owl Carousel CSS/JS (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  
+  <!-- Chart.js ve DataLabels -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- HTML kısmında gerekli kütüphane eklemesi -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
 </head>
 <body>
   <header>
     <div class="menu-buttons">
-      <button onclick="switchMenu('akbank')">Akbank</button>
+      <button class="btn btn-info" onclick="switchMenu('akbank')"><i class="fa-solid fa-building-columns"></i> Akbank</button>
+      <button class="btn btn-info" onclick="switchMenu('enpara')"><i class="fa-solid fa-building-columns"></i> Enpara</button>
+      <button class="btn btn-info" onclick="switchMenu('isbankasi')"><i class="fa-solid fa-building-columns"></i> İş Bankası</button>
     </div>
     <ul id="navMenu"></ul>
   </header>
 
   <div class="content">
     <!-- Ana Sayfa -->
-    <div id="home" class="section active">
-      <h1>Ana Sayfa</h1>
-      <p>Benchmark sunumumuzun giriş kısmı. Akbank’ın müşteri deneyimi odaklı stratejilerini inceleyelim.</p>
-    </div>
+ 
 
     <!-- Hakkında -->
-    <div id="hakkinda" class="section">
+    <div id="hakkinda-akbank" class="section hakkinda-section">
       <h1>Hakkında - Akbank</h1>
-      <p>Akbank, dijital bankacılık alanında müşteri deneyimi odaklı hizmet anlayışıyla öne çıkan lider bir kurumdur. Uygulaması, kullanıcılarına sunduğu yenilikçi ve güvenilir finansal çözümlerle dikkat çekiyor.</p>
+      <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
+      <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
       <ul>
-        <li><strong>Google Play Puanı:</strong> 4,4</li>
-        <li><strong>İndirme Sayısı:</strong> 10M+</li>
-        <li><strong>Müşteri Deneyimi:</strong> Kullanıcı odaklı tasarım, kolay kullanım ve güvenilir hizmet</li>
+        <li>Akbank Google Play Store Puanı: 4,4</li>
+        <li>Akbank Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>Akbank App Store Puanı: 4,8</li>
       </ul>
-      <p>Bu benchmark çalışması, müşterilerin beklentilerini en iyi şekilde karşılamak için yapılan stratejik adımları ve Akbank’ın bu alandaki başarılarını gözler önüne seriyor.</p>
+
+      <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
+      <div class="timeline-chart-container">
+        <canvas id="timelineChart-akbank"></canvas>
+      </div>
+
+      <!-- Owl Carousel Alanı (Grafik altında) -->
+      <h2>Rastgele 10 Yorum (Akbank)</h2>
+      <button class="shuffle-button">Karıştır Gitsin!</button>
+      <div class="owl-carousel" id="akbankCarousel"></div>
     </div>
 
-    <!-- Grafikler ve Kelime Bulutları -->
-    <div id="grafikler" class="section">
+    <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
+    <div id="grafikler-akbank" class="section">
       <h1>Grafikler ve Kelime Bulutları</h1>
       <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
 
@@ -304,7 +71,7 @@
         <div class="chart-left">
           <div class="chart-title">akbank - Star Rating Category Distribution (Google Play)</div>
           <div class="chart-container">
-            <canvas id="myChartRatingDistribution"></canvas>
+            <canvas id="myChartRatingDistribution-akbank"></canvas>
           </div>
         </div>
         <div class="clouds-right">
@@ -314,15 +81,14 @@
         </div>
       </div>
 
-      <!-- Yeni büyük kelime bulutu (tek sütun, ortalanmış) -->
       <div class="big-wordcloud">
         <h2>Akbank - Şikayetvar Kelime Bulutu</h2>
         <img src="akbank_title_wordcloud.png" alt="Akbank - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
       </div>
     </div>
 
-    <!-- Notlar Bölümü -->
-    <div id="notlar" class="section">
+    <!-- Notlar -->
+    <div id="notlar-akbank" class="section">
       <h1>Notlar</h1>
       <p>Bu bölümde Akbank ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
       <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
@@ -332,9 +98,191 @@
       </div>
       <ul id="noteList"></ul>
     </div>
+
+
+    <!-- Hakkında -->
+    <div id="hakkinda-enpara" class="section hakkinda-section">
+      <h1>Hakkında - Enpara</h1>
+      <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
+      <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
+      <ul>
+        <li>Enpara Google Play Store Puanı: 4,4</li>
+        <li>Enpara Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>Enpara App Store Puanı: 4,8</li>
+      </ul>
+
+      <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
+      <div class="timeline-chart-container">
+        <canvas id="timelineChart-enpara"></canvas>
+      </div>
+
+      <!-- Owl Carousel Alanı (Grafik altında) -->
+      <h2>Rastgele 10 Yorum (Enpara)</h2>
+      <button class="shuffle-button">Karıştır Gitsin!</button>
+      <div class="owl-carousel" id="enparaCarousel"></div>
+    </div>
+
+    <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
+    <div id="grafikler-enpara" class="section">
+      <h1>Grafikler ve Kelime Bulutları</h1>
+      <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
+
+      <div class="two-column">
+        <div class="chart-left">
+          <div class="chart-title">enpara - Star Rating Category Distribution (Google Play)</div>
+          <div class="chart-container">
+            <canvas id="myChartRatingDistribution-enpara"></canvas>
+          </div>
+        </div>
+        <div class="clouds-right">
+          <img src="enpara_iyi_wordcloud.png?v=1.0" alt="Enpara - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="enpara_kötü_wordcloud.png?v=1.0" alt="Enpara - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="enpara_orta_wordcloud.png?v=1.0" alt="Enpara - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
+        </div>
+      </div>
+
+      <div class="big-wordcloud">
+        <h2>Enpara - Şikayetvar Kelime Bulutu</h2>
+        <img src="enpara_title_wordcloud.png?v=1.0" alt="Enpara - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- Notlar -->
+    <div id="notlar-enpara" class="section">
+      <h1>Notlar</h1>
+      <p>Bu bölümde Enpara ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
+      <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
+      <div id="noteActions">
+        <button id="addNoteBtn" onclick="addNote()">Not Ekle</button>
+        <button id="updateNoteBtn" onclick="updateNote()">Güncelle</button>
+      </div>
+      <ul id="noteList"></ul>
+    </div>
+
+    
+    <!-- Hakkında -->
+    <div id="hakkinda-isbankasi" class="section hakkinda-section">
+      <h1>Hakkında - İş Bankası</h1>
+      <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
+      <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
+      <ul>
+        <li>İş Bankası Google Play Store Puanı: 4,4</li>
+        <li>İş Bankası Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>İş Bankası App Store Puanı: 4,8</li>
+      </ul>
+
+      <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
+      <div class="timeline-chart-container">
+        <canvas id="timelineChart-isbankasi"></canvas>
+      </div>
+
+      <!-- Owl Carousel Alanı (Grafik altında) -->
+      <h2>Rastgele 10 Yorum (Enpara)</h2>
+      <button class="shuffle-button">Karıştır Gitsin!</button>
+      <div class="owl-carousel" id="isbankasiCarousel"></div>
+    </div>
+
+    <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
+    <div id="grafikler-isbankasi" class="section">
+      <h1>Grafikler ve Kelime Bulutları</h1>
+      <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
+
+      <div class="two-column">
+        <div class="chart-left">
+          <div class="chart-title">İş Bankası - Star Rating Category Distribution (Google Play)</div>
+          <div class="chart-container">
+            <canvas id="myChartRatingDistribution-isbankasi"></canvas>
+          </div>
+        </div>
+        <div class="clouds-right">
+          <img src="isbankasi_iyi_wordcloud.png?v=1.0" alt="İş Bankası - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="isbankasi_kötü_wordcloud.png?v=1.0" alt="İş Bankası - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="isbankasi_orta_wordcloud.png?v=1.0" alt="İş Bankası - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
+        </div>
+      </div>
+
+      <div class="big-wordcloud">
+        <h2>İş Bankası - Şikayetvar Kelime Bulutu</h2>
+        <img src="isbankasi_title_wordcloud.png?v=1.0" alt="İş Bankası - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- Notlar -->
+    <div id="notlar-isbankasi" class="section">
+      <h1>Notlar</h1>
+      <p>Bu bölümde İş Bankası ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
+      <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
+      <div id="noteActions">
+        <button id="addNoteBtn" onclick="addNote()">Not Ekle</button>
+        <button id="updateNoteBtn" onclick="updateNote()">Güncelle</button>
+      </div>
+      <ul id="noteList"></ul>
+    </div>
+
+        
+    <!-- Hakkında -->
+    <div id="hakkinda-qnb" class="section hakkinda-section">
+      <h1>Hakkında - QNB Finansbank</h1>
+      <p><strong>Bu benchmark 22 Kasım 2024 tarihinden 22 Şubat 2025 tarihine kadar olan "GooglePlay" ve "ŞikayetVar" yorum ve şikayetlerini konu edinmektedir.</strong></p>
+      <p>22 Şubat 2025 tarihinde elde edilen bilgilere göre</p>
+      <ul>
+        <li>İş Bankası Google Play Store Puanı: 4,4</li>
+        <li>İş Bankası Google Play Store İndirme sayısı: 10Mn+</li>
+        <li>İş Bankası App Store Puanı: 4,8</li>
+      </ul>
+
+      <h2 class="timeline-chart-title">Yorumlar/Şikayetler Sıklık Grafiği</h2>
+      <div class="timeline-chart-container">
+        <canvas id="timelineChart-isbankasi"></canvas>
+      </div>
+
+      <!-- Owl Carousel Alanı (Grafik altında) -->
+      <h2>Rastgele 10 Yorum (Enpara)</h2>
+      <button class="shuffle-button">Karıştır Gitsin!</button>
+      <div class="owl-carousel" id="isbankasiCarousel"></div>
+    </div>
+
+    <!-- Grafikler (Star Rating Distribution, Kelime Bulutları) -->
+    <div id="grafikler-isbankasi" class="section">
+      <h1>Grafikler ve Kelime Bulutları</h1>
+      <p>Son 3 ayda Google Play ve Şikayetvar üzerinde yapılan yorumlara dair sentiment analiz sonuçları aşağıdaki grafikte ve kelime bulutlarında yer almaktadır.</p>
+
+      <div class="two-column">
+        <div class="chart-left">
+          <div class="chart-title">İş Bankası - Star Rating Category Distribution (Google Play)</div>
+          <div class="chart-container">
+            <canvas id="myChartRatingDistribution-isbankasi"></canvas>
+          </div>
+        </div>
+        <div class="clouds-right">
+          <img src="isbankasi_iyi_wordcloud.png?v=1.0" alt="İş Bankası - İyi Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="isbankasi_kötü_wordcloud.png?v=1.0" alt="İş Bankası - Kötü Yorum Kelime Bulutu" onclick="openModal(this.src)">
+          <img src="isbankasi_orta_wordcloud.png?v=1.0" alt="İş Bankası - Orta Yorum Kelime Bulutu" onclick="openModal(this.src)">
+        </div>
+      </div>
+
+      <div class="big-wordcloud">
+        <h2>İş Bankası - Şikayetvar Kelime Bulutu</h2>
+        <img src="isbankasi_title_wordcloud.png?v=1.0" alt="İş Bankası - Şikayetvar Kelime Bulutu" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- Notlar -->
+    <div id="notlar-isbankasi" class="section">
+      <h1>Notlar</h1>
+      <p>Bu bölümde İş Bankası ile ilgili notlarınızı ekleyebilir, düzenleyebilir veya silebilirsiniz.</p>
+      <textarea id="noteInput" placeholder="Notunuzu buraya yazın..."></textarea>
+      <div id="noteActions">
+        <button id="addNoteBtn" onclick="addNote()">Not Ekle</button>
+        <button id="updateNoteBtn" onclick="updateNote()">Güncelle</button>
+      </div>
+      <ul id="noteList"></ul>
+    </div>
+
+
   </div>
 
-  <!-- Modal Yapısı -->
+  <!-- Modal (Pop-up) -->
   <div id="imgModal" class="modal" onclick="closeModal(event)">
     <span class="close" onclick="closeModal(event)">&times;</span>
     <img class="modal-content" id="modalImg">
@@ -344,199 +292,11 @@
     </div>
   </div>
 
-  <script>
-    // Menü verileri
-    const menus = {
-      akbank: [
-        { name: "Ana Sayfa", section: "home" },
-        { name: "Hakkında", section: "hakkinda" },
-        { name: "Grafikler", section: "grafikler" },
-        { name: "Notlar", section: "notlar" }
-      ]
-    };
 
-    function loadMenu(menuKey) {
-      const navMenu = document.getElementById("navMenu");
-      navMenu.innerHTML = "";
-      menus[menuKey].forEach(item => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = "#";
-        a.textContent = item.name;
-        a.onclick = function() { showSection(item.section); };
-        li.appendChild(a);
-        navMenu.appendChild(li);
-      });
-    }
+  <!-- Inline txt verisi (örneğin akbank.txt içeriği) -->
+  <script src="comments/akbankData.js"></script>
+  <script src="comments/enparaData.js"></script>
 
-    function switchMenu(menuKey) {
-      loadMenu(menuKey);
-      if (menus[menuKey].length > 0) {
-        showSection(menus[menuKey][0].section);
-      }
-    }
-
-    function showSection(sectionId) {
-      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
-    }
-
-    window.onload = function() {
-      switchMenu('akbank');
-      loadNotes();
-    };
-
-    // Modal İşlemleri
-    let currentScale = 1;
-    function openModal(src) {
-      const modal = document.getElementById("imgModal");
-      const modalImg = document.getElementById("modalImg");
-      modalImg.src = src;
-      modal.style.display = "flex";
-      currentScale = 1;
-      modalImg.style.transform = `scale(${currentScale})`;
-    }
-    function closeModal(event) {
-      if (event.target.classList.contains('modal') || event.target.classList.contains('close')) {
-        document.getElementById("imgModal").style.display = "none";
-      }
-    }
-    function zoomIn(event) {
-      event.stopPropagation();
-      const modalImg = document.getElementById("modalImg");
-      currentScale += 0.2;
-      modalImg.style.transform = `scale(${currentScale})`;
-    }
-    function zoomOut(event) {
-      event.stopPropagation();
-      const modalImg = document.getElementById("modalImg");
-      currentScale = Math.max(0.2, currentScale - 0.2);
-      modalImg.style.transform = `scale(${currentScale})`;
-    }
-
-    // Notlar İşlemleri (Local Storage ile)
-    let editingIndex = -1; // Düzenleme modunda hangi notun düzenlendiği (-1: yeni not ekleme)
-    function loadNotes() {
-      const noteList = document.getElementById('noteList');
-      noteList.innerHTML = "";
-      const notes = JSON.parse(localStorage.getItem('notes')) || [];
-      notes.forEach((note, index) => {
-        const li = document.createElement('li');
-        li.textContent = note;
-        const actionsDiv = document.createElement('div');
-        actionsDiv.className = 'note-actions';
-        const editBtn = document.createElement('button');
-        editBtn.textContent = 'Düzenle';
-        editBtn.onclick = () => startEditNote(index);
-        const deleteBtn = document.createElement('button');
-        deleteBtn.textContent = 'Sil';
-        deleteBtn.onclick = () => deleteNote(index);
-        actionsDiv.appendChild(editBtn);
-        actionsDiv.appendChild(deleteBtn);
-        li.appendChild(actionsDiv);
-        noteList.appendChild(li);
-      });
-    }
-    function saveNotes(notes) {
-      localStorage.setItem('notes', JSON.stringify(notes));
-    }
-    function addNote() {
-      const noteInput = document.getElementById('noteInput');
-      const noteText = noteInput.value.trim();
-      if (noteText !== "") {
-        const notes = JSON.parse(localStorage.getItem('notes')) || [];
-        notes.push(noteText);
-        saveNotes(notes);
-        noteInput.value = "";
-        loadNotes();
-      }
-    }
-    function startEditNote(index) {
-      const notes = JSON.parse(localStorage.getItem('notes')) || [];
-      document.getElementById('noteInput').value = notes[index];
-      editingIndex = index;
-      document.getElementById('addNoteBtn').style.display = 'none';
-      document.getElementById('updateNoteBtn').style.display = 'inline-block';
-    }
-    function updateNote() {
-      const noteInput = document.getElementById('noteInput');
-      const noteText = noteInput.value.trim();
-      if (noteText !== "" && editingIndex > -1) {
-        const notes = JSON.parse(localStorage.getItem('notes')) || [];
-        notes[editingIndex] = noteText;
-        saveNotes(notes);
-        noteInput.value = "";
-        editingIndex = -1;
-        document.getElementById('addNoteBtn').style.display = 'inline-block';
-        document.getElementById('updateNoteBtn').style.display = 'none';
-        loadNotes();
-      }
-    }
-    function deleteNote(index) {
-      const notes = JSON.parse(localStorage.getItem('notes')) || [];
-      notes.splice(index, 1);
-      saveNotes(notes);
-      loadNotes();
-    }
-  </script>
-
-  <!-- Chart.js Kütüphanesi -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!-- Chart.js DataLabels Eklentisi -->
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-  <script>
-    const ctxRating = document.getElementById('myChartRatingDistribution').getContext('2d');
-    const labelsRating = ['iyi', 'kötü', 'orta']; 
-    const frequenciesRating = [327, 621, 56]; 
-    new Chart(ctxRating, {
-      type: 'bar',
-      data: {
-        labels: labelsRating,
-        datasets: [{
-          label: 'Frequency',
-          data: frequenciesRating,
-          backgroundColor: 'rgba(135, 206, 250, 0.7)',
-          borderColor: 'rgba(70, 130, 180, 1)',
-          borderWidth: 1
-        }]
-      },
-      options: {
-        indexAxis: 'y',
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          x: {
-            title: {
-              display: true,
-              text: 'Frequency'
-            },
-            beginAtZero: true
-          },
-          y: {
-            title: {
-              display: true,
-              text: 'Star Rating Category'
-            }
-          }
-        },
-        plugins: {
-          title: { display: false },
-          legend: { display: false },
-          datalabels: {
-            formatter: (value, context) => {
-              const dataArr = context.chart.data.datasets[0].data;
-              const total = dataArr.reduce((a, b) => a + b, 0);
-              return ((value / total) * 100).toFixed(1) + '%';
-            },
-            color: '#333',
-            anchor: 'center',
-            align: 'center',
-            font: { weight: 'bold' }
-          }
-        }
-      },
-      plugins: [ChartDataLabels]
-    });
-  </script>
+  <script src="scripts/app.js"></script>
 </body>
 </html>
